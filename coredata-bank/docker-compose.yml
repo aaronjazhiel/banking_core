@@ -1,0 +1,47 @@
+version: "2"
+services:
+    service-login:
+      image: java:8
+      
+      volumes:
+       
+        - ./microservice-corebank-login/target/microservice-corebank-login-1.0-SNAPSHOT.jar:/usr/src/app/service-login.jar
+      working_dir: /usr/src/app
+      command: java  -jar service-login.jar
+      
+    
+    
+    service-logindinamic:
+      image: java:8
+      volumes:
+     
+        - ./microservice-corebank-logindinamic/target/microservice-corebank-logindinamic-login-1.0-SNAPSHOT.jar:/usr/src/app/service-logindinamic.jar
+      working_dir: /usr/src/app
+      command: java  -jar service-logindinamic.jar
+      
+    
+   
+    service-corebank-logout:
+      image: java:8
+      volumes:
+     
+        - ./microservice-corebank-logout/target/microservice-corebank-logout-login-1.0-SNAPSHOT.jar:/usr/src/app/service-logindinamic.jar
+      working_dir: /usr/src/app
+      command: java  -jar service-logindinamic.jar
+     
+    
+    
+     
+    services-loginvalidation:
+      image: java:8
+      volumes:
+     
+        - ./microservices-loginvalidation/target/microservices-loginvalidation-1.0-SNAPSHOT.jar:/usr/src/app/service-logindinamic.jar
+      working_dir: /usr/src/app
+      command: java  -jar service-logindinamic.jar
+      
+    
+    
+     
+   
+  

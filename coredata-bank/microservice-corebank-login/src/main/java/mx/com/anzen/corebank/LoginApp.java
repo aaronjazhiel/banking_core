@@ -1,12 +1,12 @@
-package mx.com.anzen.core.logindinamic;
+package mx.com.anzen.corebank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoginDinamicApp {
+public class LoginApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LoginDinamicApp.class, args);
+		SpringApplication.run(LoginApp.class, args);
 	}
 }

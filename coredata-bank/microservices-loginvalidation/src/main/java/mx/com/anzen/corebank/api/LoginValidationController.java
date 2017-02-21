@@ -22,7 +22,7 @@ public class LoginValidationController {
  @RequestMapping("/validation")
  @ResponseBody
  String home() {
- return "HolaMundo";
+ return "validationAplication";
  }
  
 }

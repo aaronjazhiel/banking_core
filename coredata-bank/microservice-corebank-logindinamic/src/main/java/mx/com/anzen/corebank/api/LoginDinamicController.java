@@ -21,7 +21,7 @@ public class LoginDinamicController {
  @RequestMapping("/LoginDinamic")
  @ResponseBody
  String home() {
- return "HolaMundo";
+ return "loginDinamic";
  }
  
 }

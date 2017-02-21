@@ -15,7 +15,7 @@ public class LogoutController {
  @RequestMapping("/logout")
  @ResponseBody
  String home() {
- return "HolaMundo";
+ return "logoutAplication";
  }
  
 }

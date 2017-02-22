@@ -1,4 +1,4 @@
-package mx.com.anzen.corebank.api;
+package mx.com.anzen.corebank.models;
 
 public class LoginBean {
 	

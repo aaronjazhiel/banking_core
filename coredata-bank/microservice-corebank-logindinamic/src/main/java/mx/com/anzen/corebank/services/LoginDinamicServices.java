@@ -6,7 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import mx.com.anzen.corebank.api.AppConfig;
+import mx.com.anzen.corebank.LoginDinamicApp;
+import mx.com.anzen.corebank.models.AppConfig;
 import mx.com.anzen.corebank.models.LoginBean;
 import net.minidev.json.JSONObject;
 

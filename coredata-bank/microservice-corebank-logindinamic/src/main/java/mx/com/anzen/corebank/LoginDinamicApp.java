@@ -3,10 +3,13 @@ package mx.com.anzen.corebank;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+
+@SpringBootApplication 
 public class LoginDinamicApp {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LoginDinamicApp.class, args);
 	}
+	
+	 
 }

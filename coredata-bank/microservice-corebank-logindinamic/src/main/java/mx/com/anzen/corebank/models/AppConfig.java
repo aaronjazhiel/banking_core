@@ -1,9 +1,7 @@
-package mx.com.anzen.corebank.api;
+package mx.com.anzen.corebank.models;
  
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import mx.com.anzen.corebank.models.LoginBean;
  
 
 @Configuration

@@ -6,7 +6,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import mx.com.anzen.corebank.LoginDinamicApp;
 import mx.com.anzen.corebank.models.AppConfig;
 import mx.com.anzen.corebank.models.LoginBean;
 import net.minidev.json.JSONObject;
@@ -27,26 +26,23 @@ public class LoginDinamicServices {
 				 try{
 					 beanLogin.setCliente(json.get("cliente").toString());
 					 beanLogin.setUsuario(json.get("usuario").toString());
-					 beanLogin.setIdSesion(json.get("idSesion").toString());
+					 beanLogin.setIdSesion(json.get("identificador-de-sesion").toString());
 					 
-					 if( beanLogin.getCliente().equalsIgnoreCase("007")&&
-							   beanLogin.getUsuario().equalsIgnoreCase("1990")&&
-							   beanLogin.getIdSesion().equalsIgnoreCase("1233")){
+					 if( beanLogin.getCliente().equalsIgnoreCase("qwertywined12345")&&
+							   beanLogin.getUsuario().equalsIgnoreCase("wined")&&
+							   beanLogin.getIdSesion().equalsIgnoreCase("qwerty12345")){
 								
-							     jsonObject=new JSONObject();
-						          
-								jsonObject.put("codigo","200");
-								jsonObject.put("valor comparativo","23141241412421"); 
+							   jsonObject=new JSONObject();
+						           
+							   jsonObject.put("valor-de-comparacion",true); 
 							}else{
 								jsonObject=new JSONObject();
-						          
-								jsonObject.put("codigo","300");
-								jsonObject.put("descripcion","Ocurrio un problema al consultar"); 
+						           
+								jsonObject.put("Error","Error en la autenticacion"); 
 							}
 				 }catch(Exception e){
-					 jsonObject=new JSONObject(); 
-						 jsonObject.put("codigo","99");
-							jsonObject.put("descripcion","JSON Incorrecto"); 
+					 jsonObject=new JSONObject();  
+							jsonObject.put("error","no response from server"); 
 					  
 				 } 
 				/**

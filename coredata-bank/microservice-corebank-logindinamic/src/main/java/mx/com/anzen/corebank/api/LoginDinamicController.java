@@ -4,17 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import mx.com.anzen.corebank.models.LoginBean;
 import mx.com.anzen.corebank.services.LoginDinamicServices;
 import net.minidev.json.JSONObject;
  
 
-@Controller
+@RestController
 public class LoginDinamicController {
 	
 	 ApplicationContext appContext=null;

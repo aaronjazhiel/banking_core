@@ -121,11 +121,11 @@ public class LoginDinamicServices {
 				 try{
 					 beanEstLogin.setCliente(json.get("cliente").toString());
 					 beanEstLogin.setUsuario(json.get("usuario").toString()); 
-					 beanEstLogin.setPassword(json.get("password").toString());
+					 beanEstLogin.setPassword(json.get("pasword").toString());
 					 beanEstLogin.setIp(json.get("ip").toString());
 					 
 					 if( beanEstLogin.getCliente().equalsIgnoreCase("Mutiva")&&beanEstLogin.getUsuario().equalsIgnoreCase("Edwin")&&
-							 beanEstLogin.getPassword().equalsIgnoreCase("1234")&&beanEstLogin.getIp().equalsIgnoreCase("192.168.1.2")){
+							 beanEstLogin.getPassword().equalsIgnoreCase("aqui-esta-el-password")&&beanEstLogin.getIp().equalsIgnoreCase("192.168.1.2")){
 						   
 							   jsonObject=new JSONObject(); 
 							   
@@ -189,7 +189,7 @@ public class LoginDinamicServices {
 			 */
 			
 			
-			public JSONObject logOut(@RequestBody JSONObject  json ) {
+			public JSONObject solicitudLogOut(@RequestBody JSONObject  json ) {
 				 
 				appContext=new AnnotationConfigApplicationContext(AppConfig.class);
 				 
@@ -206,7 +206,7 @@ public class LoginDinamicServices {
 								
 							   jsonObject=new JSONObject();
 						           
-							   jsonObject.put("respuest",true); 
+							   jsonObject.put("respuest",false); 
 							}else{
 								jsonObject=new JSONObject();
 						           
@@ -230,5 +230,73 @@ public class LoginDinamicServices {
 				
 		 return jsonObject;
 		}
+
+
+			
+			
+			/**
+			 * 
+			 * @param json
+			 * @return
+			 * 
+			 * nombre del servicio: Validación de login dinámico
+			 * 
+			 * request.
+			 * 
+			 * -  Cliente.
+			 * -  Usuario.
+			 * -  Identificador de sesión.
+			 * -  Valor dinámico.
+			 * 
+			 * Respuest.
+			 * 
+			 * -  "respuest": true
+			 * 
+			 */
+
+			public JSONObject solicitudLoginDinamico(JSONObject json) {
+				
+
+				appContext=new AnnotationConfigApplicationContext(AppConfig.class);
+				 
+				beanDinLogin=(LoginDinBean) appContext.getBean("loginDinamico");
+				JSONObject jsonObject=null; 
+				 try{
+					 beanDinLogin.setCliente(json.get("cliente").toString());
+					 beanDinLogin.setUsuario(json.get("usuario").toString());
+					 beanDinLogin.setIdSesion(json.get("identificador de sesion").toString());
+					 beanDinLogin.setValorDinamico(json.get("valor-dinamico").toString());
+					 
+					 if( beanDinLogin.getCliente().equalsIgnoreCase("werwer12321")&&
+							 beanDinLogin.getUsuario().equalsIgnoreCase("12wined")&&
+							 beanDinLogin.getIdSesion().equalsIgnoreCase("12we2345rwfw")&&beanDinLogin.getValorDinamico().equalsIgnoreCase("12-23-sd-x")){
+								
+							jsonObject=new JSONObject();
+						           
+							jsonObject.put("respuest",true); 
+					}else{
+							jsonObject=new JSONObject();
+						           
+							jsonObject.put("Error","Error en la autenticacion"); 
+					}
+				 }catch(Exception e){
+					 jsonObject=new JSONObject();  
+							jsonObject.put("error","no response from server"); 
+					  
+				 } 
+				/**
+				 * Condicion para validar la existencia de los datos a consultar.
+				 */
+				  
+				/**
+				 * Cerramos el ApplicationContext
+				 */
+				
+				((ConfigurableApplicationContext) appContext).close();
+				
+				
+				return jsonObject;
+				
+			}
 
 }

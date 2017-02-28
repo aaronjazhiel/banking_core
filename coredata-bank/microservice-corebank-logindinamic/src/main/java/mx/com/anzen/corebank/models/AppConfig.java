@@ -17,7 +17,12 @@ public class AppConfig {
 	public LoginEstBean loginEstatico(){
 		return new LoginEstBean();
 	}
+	
+	@Bean(name="loginDinamico")
+	public LoginDinBean loginDinamico(){
+		return new LoginDinBean();
+	}
 	 
 	
-
+	
 }

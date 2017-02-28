@@ -44,5 +44,24 @@ public class LoginDinamicController {
 			
      return jsonResponse;
  }
+	
+	
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/loginestatico")
+ public @ResponseBody JSONObject loginestatico(@RequestBody JSONObject  json ) {
+		 
+		JSONObject  jsonResponse =loginDinamicServices.solicitudLoginEst(json);
+			
+     return jsonResponse;
+ }
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/logOut")
+	 public @ResponseBody JSONObject logindinamico(@RequestBody JSONObject  json ) {
+			 
+			JSONObject  jsonResponse =loginDinamicServices.logOut(json);
+				
+	     return jsonResponse;
+	 }
+	
  
 }

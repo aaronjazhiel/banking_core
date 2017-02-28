@@ -11,6 +11,12 @@ public class AppConfig {
 	public LoginBean login(){
 		return new LoginBean();
 	}
+	
+	
+	@Bean(name="loginEstatico")
+	public LoginEstBean loginEstatico(){
+		return new LoginEstBean();
+	}
 	 
 	
 

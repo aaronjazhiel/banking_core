@@ -6,11 +6,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+	 
 	
-	@Bean(name="login")
-	public LoginBean login(){
-		return new LoginBean();
+	@Bean(name="loginDinamico")
+	public LoginDinBean loginDinamico(){
+		return new LoginDinBean();
 	}
- 
+	 
+	
 	
 }

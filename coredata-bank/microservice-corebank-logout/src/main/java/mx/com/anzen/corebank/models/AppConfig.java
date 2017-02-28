@@ -11,6 +11,8 @@ public class AppConfig {
 	public LoginBean login(){
 		return new LoginBean();
 	}
- 
+	
+	 
+	
 	
 }

@@ -21,6 +21,7 @@
             <module>microservice-corebank-logout</module>
             <module>microservice-corebank-logindinamic</module>
             <module>microservices-loginvalidation</module>
+            <module>microservice-corebank-accounts</module>
        </modules>
 
 	<properties>
